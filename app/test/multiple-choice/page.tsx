@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
-export default function MultipleChoiceTestPage() {
+function MultipleChoiceTestContent() {
   const searchParams = useSearchParams()
   const topic = searchParams.get('topic') || 'Environment'
   const [currentQuestion, setCurrentQuestion] = useState(5)
@@ -189,6 +189,18 @@ export default function MultipleChoiceTestPage() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function MultipleChoiceTestPage() {
+  return (
+    <Suspense fallback={
+      <div className="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center">
+        <div className="text-white">Loading...</div>
+      </div>
+    }>
+      <MultipleChoiceTestContent />
+    </Suspense>
   )
 }
 

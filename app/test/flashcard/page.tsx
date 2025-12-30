@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
-export default function FlashcardPage() {
+function FlashcardContent() {
   const searchParams = useSearchParams()
   const topic = searchParams.get('topic') || 'Environment'
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -67,7 +67,7 @@ export default function FlashcardPage() {
   }
 
   const handleKnown = () => {
-    setKnownWords(new Set([...knownWords, currentIndex]))
+    setKnownWords(new Set([...Array.from(knownWords), currentIndex]))
     setUnknownWords(new Set([...Array.from(unknownWords)].filter((i) => i !== currentIndex)))
     if (currentIndex < flashcards.length - 1) {
       setTimeout(() => {
@@ -78,7 +78,7 @@ export default function FlashcardPage() {
   }
 
   const handleUnknown = () => {
-    setUnknownWords(new Set([...unknownWords, currentIndex]))
+    setUnknownWords(new Set([...Array.from(unknownWords), currentIndex]))
     setKnownWords(new Set([...Array.from(knownWords)].filter((i) => i !== currentIndex)))
     if (currentIndex < flashcards.length - 1) {
       setTimeout(() => {
@@ -276,6 +276,18 @@ export default function FlashcardPage() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function FlashcardPage() {
+  return (
+    <Suspense fallback={
+      <div className="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center">
+        <div className="text-white">Loading...</div>
+      </div>
+    }>
+      <FlashcardContent />
+    </Suspense>
   )
 }
 

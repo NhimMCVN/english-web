@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
-export default function WritingTestPage() {
+function WritingTestContent() {
   const searchParams = useSearchParams()
   const topic = searchParams.get('topic') || 'Environment'
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -287,6 +287,18 @@ export default function WritingTestPage() {
         )}
       </main>
     </div>
+  )
+}
+
+export default function WritingTestPage() {
+  return (
+    <Suspense fallback={
+      <div className="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center">
+        <div className="text-white">Loading...</div>
+      </div>
+    }>
+      <WritingTestContent />
+    </Suspense>
   )
 }
 
