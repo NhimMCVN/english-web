@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>VocabMaster - User Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Lexend", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .material-symbols-outlined.filled {
+        font-variation-settings: "FILL" 1;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #334155;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans text-slate-900 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 antialiased h-screen flex overflow-hidden selection:bg-primary-500 selection:text-white transition-colors duration-300"
+  >
+    <aside
+      class="w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0 z-30 transition-colors duration-300"
+    >
+      <div
+        class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-800/50"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="size-9 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20"
+          >
+            <span class="material-symbols-outlined text-[22px]">school</span>
+          </div>
+          <h1
+            class="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white"
+          >
+            VocabMaster
+          </h1>
+        </div>
+      </div>
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-8">
+        <div>
+          <div
+            class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-2"
+          >
+            Menu
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium"
+              href="#"
+            >
+              <span class="material-symbols-outlined filled">dashboard</span>
+              Dashboard
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
+              href="#"
+            >
+              <span class="material-symbols-outlined">forum</span>
+              Community
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
+              href="#"
+            >
+              <span class="material-symbols-outlined">settings</span>
+              Settings
+            </a>
+          </nav>
+        </div>
+        <div>
+          <div class="flex items-center justify-between mb-4 px-2">
+            <div
+              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+            >
+              My Packages
+            </div>
+            <button
+              class="text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >add_circle</span
+              >
+            </button>
+          </div>
+          <div class="flex flex-col gap-1">
+            <details class="group" open="">
+              <summary
+                class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors select-none"
+              >
+                <span
+                  class="material-symbols-outlined text-slate-400 text-[20px] shrink-0 transition-transform duration-200 group-open:rotate-90"
+                  >chevron_right</span
+                >
+                <div
+                  class="size-8 rounded-md bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0"
+                >
+                  <span class="material-symbols-outlined filled text-[18px]"
+                    >folder</span
+                  >
+                </div>
+                <div class="flex-1 min-w-0 text-left">
+                  <h3
+                    class="font-medium text-sm text-slate-900 dark:text-white truncate"
+                  >
+                    IELTS Core
+                  </h3>
+                  <p
+                    class="text-[10px] text-slate-500 dark:text-slate-400 truncate"
+                  >
+                    500 words
+                  </p>
+                </div>
+              </summary>
+              <div class="pl-9 pr-2 pb-2 mt-1 space-y-0.5">
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Education</span>
+                </a>
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Environment</span>
+                </a>
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Technology</span>
+                </a>
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Health</span>
+                </a>
+              </div>
+            </details>
+            <details class="group">
+              <summary
+                class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors select-none"
+              >
+                <span
+                  class="material-symbols-outlined text-slate-400 text-[20px] shrink-0 transition-transform duration-200 group-open:rotate-90"
+                  >chevron_right</span
+                >
+                <div
+                  class="size-8 rounded-md bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 group-hover:text-slate-700 dark:group-hover:text-slate-200"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >folder</span
+                  >
+                </div>
+                <div class="flex-1 min-w-0 text-left">
+                  <h3
+                    class="font-medium text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white truncate"
+                  >
+                    TOEIC 600
+                  </h3>
+                  <p class="text-[10px] text-slate-400 truncate">150 words</p>
+                </div>
+              </summary>
+              <div class="pl-9 pr-2 pb-2 mt-1 space-y-0.5">
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Business</span>
+                </a>
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Office Life</span>
+                </a>
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Personnel</span>
+                </a>
+              </div>
+            </details>
+            <details class="group">
+              <summary
+                class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors select-none"
+              >
+                <span
+                  class="material-symbols-outlined text-slate-400 text-[20px] shrink-0 transition-transform duration-200 group-open:rotate-90"
+                  >chevron_right</span
+                >
+                <div
+                  class="size-8 rounded-md bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 group-hover:text-slate-700 dark:group-hover:text-slate-200"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >folder</span
+                  >
+                </div>
+                <div class="flex-1 min-w-0 text-left">
+                  <h3
+                    class="font-medium text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white truncate"
+                  >
+                    Tech Terms
+                  </h3>
+                  <p class="text-[10px] text-slate-400 truncate">45 words</p>
+                </div>
+              </summary>
+              <div class="pl-9 pr-2 pb-2 mt-1 space-y-0.5">
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Programming</span>
+                </a>
+                <a
+                  class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors group/topic"
+                  href="#"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-slate-400 group-hover/topic:text-blue-500 transition-colors"
+                    >topic</span
+                  >
+                  <span class="truncate">Hardware</span>
+                </a>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-100 dark:border-slate-800">
+        <button
+          class="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-left"
+        >
+          <div
+            class="size-10 rounded-full bg-cover bg-center shrink-0 border border-slate-200 dark:border-slate-700"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDT2oXU45agU91W5nwhcjArDd5AYcqnLT4GA1N7XZZv6GOSFMmf77uB4fVLBu5Qfu_dkYZ3MHh2pVkmb1bwLVo9WhA3satka3mQgRJPVn5Qo0OM8ed_kKybRg5FaUOqcjO08xLBb6i62d1flfFlnotUTY3mbhyCaUCitC38iCuNLJYbhF6vDXL09mp3HIQTSJLJzI5T6KLIJiUiPk0dXVdVFA7ucBCmkyHA6EgX6K0zgNBI4159Zmgqngcz2xQVvrS0986N5vj9pDGI');
+            "
+          ></div>
+          <div class="flex-1 min-w-0">
+            <p
+              class="font-bold text-sm text-slate-900 dark:text-white truncate"
+            >
+              Alex Morgan
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 truncate">
+              Free Plan
+            </p>
+          </div>
+          <span class="material-symbols-outlined text-slate-400"
+            >expand_more</span
+          >
+        </button>
+      </div>
+    </aside>
+    <main
+      class="flex-1 flex flex-col min-w-0 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300"
+    >
+      <header
+        class="h-16 flex items-center justify-between px-6 lg:px-8 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-20"
+      >
+        <button class="lg:hidden mr-4 text-slate-500">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="flex-1 max-w-md">
+          <div class="relative group">
+            <span
+              class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-500 transition-colors material-symbols-outlined text-[20px]"
+              >search</span
+            >
+            <input
+              class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-full py-2 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 transition-all shadow-sm"
+              placeholder="Search words or packages..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-3 ml-4">
+          <button
+            class="relative size-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-400 dark:hover:text-white transition-colors"
+          >
+            <span class="material-symbols-outlined">notifications</span>
+            <span
+              class="absolute top-2.5 right-2.5 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"
+            ></span>
+          </button>
+          <div
+            class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+          >
+            <span
+              class="material-symbols-outlined text-amber-500 text-[18px] filled"
+              >local_fire_department</span
+            >
+            <span class="text-sm font-bold text-slate-700 dark:text-slate-300"
+              >12 Days</span
+            >
+          </div>
+        </div>
+      </header>
+      <div class="flex-1 overflow-y-auto p-6 lg:p-8 scroll-smooth">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4"
+          >
+            <div>
+              <h1
+                class="font-display text-3xl font-bold text-slate-900 dark:text-white mb-2"
+              >
+                Dashboard
+              </h1>
+              <p class="text-slate-500 dark:text-slate-400">
+                Welcome back, Alex! You're making great progress.
+              </p>
+            </div>
+            <button
+              class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors shadow-lg shadow-blue-500/20"
+            >
+              <span class="material-symbols-outlined text-[20px]">add</span>
+              Create Test
+            </button>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
+          >
+            <div
+              class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1 duration-300"
+            >
+              <div
+                class="size-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined">translate</span>
+              </div>
+              <div>
+                <p
+                  class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider"
+                >
+                  Words Learned
+                </p>
+                <h3
+                  class="text-2xl font-display font-bold text-slate-900 dark:text-white"
+                >
+                  1,245
+                </h3>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1 duration-300"
+            >
+              <div
+                class="size-12 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined">flag</span>
+              </div>
+              <div>
+                <p
+                  class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider"
+                >
+                  Weekly Goal
+                </p>
+                <div class="flex items-baseline gap-1">
+                  <h3
+                    class="text-2xl font-display font-bold text-slate-900 dark:text-white"
+                  >
+                    85
+                  </h3>
+                  <span class="text-sm text-slate-400">/ 100</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1 duration-300"
+            >
+              <div
+                class="size-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined">check_circle</span>
+              </div>
+              <div>
+                <p
+                  class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider"
+                >
+                  Accuracy
+                </p>
+                <h3
+                  class="text-2xl font-display font-bold text-slate-900 dark:text-white"
+                >
+                  94%
+                </h3>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4 transition-transform hover:-translate-y-1 duration-300"
+            >
+              <div
+                class="size-12 rounded-xl bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0"
+              >
+                <span class="material-symbols-outlined">schedule</span>
+              </div>
+              <div>
+                <p
+                  class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider"
+                >
+                  Time Spent
+                </p>
+                <h3
+                  class="text-2xl font-display font-bold text-slate-900 dark:text-white"
+                >
+                  12h 30m
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-6">
+              <div class="flex items-center justify-between">
+                <h2
+                  class="text-xl font-display font-bold text-slate-900 dark:text-white flex items-center gap-2"
+                >
+                  <span class="size-2 rounded-full bg-blue-500"></span>
+                  My Packages
+                </h2>
+                <button
+                  class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                >
+                  View All
+                </button>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div
+                  class="group bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all shadow-sm hover:shadow-md cursor-pointer relative"
+                >
+                  <div class="absolute top-5 right-5 size-10">
+                    <svg class="size-full -rotate-90" viewBox="0 0 36 36">
+                      <path
+                        class="text-slate-100 dark:text-slate-700"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                      ></path>
+                      <path
+                        class="text-blue-500"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-dasharray="70, 100"
+                        stroke-width="3"
+                      ></path>
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-slate-700 dark:text-slate-300"
+                    >
+                      70%
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div
+                      class="size-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white mb-3 shadow-lg shadow-blue-500/20"
+                    >
+                      <span class="material-symbols-outlined">school</span>
+                    </div>
+                    <h3
+                      class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-500 transition-colors"
+                    >
+                      IELTS Core
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                      500 essential words
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-2 mb-4">
+                    <span
+                      class="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide"
+                      >Academic</span
+                    >
+                    <span
+                      class="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide"
+                      >Advanced</span
+                    >
+                  </div>
+                  <div
+                    class="pt-4 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center"
+                  >
+                    <span class="text-xs text-slate-400"
+                      >Last learned 2h ago</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-slate-300 group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="group bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all shadow-sm hover:shadow-md cursor-pointer relative"
+                >
+                  <div class="absolute top-5 right-5 size-10">
+                    <svg class="size-full -rotate-90" viewBox="0 0 36 36">
+                      <path
+                        class="text-slate-100 dark:text-slate-700"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                      ></path>
+                      <path
+                        class="text-emerald-500"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-dasharray="45, 100"
+                        stroke-width="3"
+                      ></path>
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-slate-700 dark:text-slate-300"
+                    >
+                      45%
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div
+                      class="size-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white mb-3 shadow-lg shadow-emerald-500/20"
+                    >
+                      <span class="material-symbols-outlined"
+                        >business_center</span
+                      >
+                    </div>
+                    <h3
+                      class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors"
+                    >
+                      TOEIC 600
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                      Business vocabulary
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-2 mb-4">
+                    <span
+                      class="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide"
+                      >Business</span
+                    >
+                    <span
+                      class="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide"
+                      >Intermediate</span
+                    >
+                  </div>
+                  <div
+                    class="pt-4 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center"
+                  >
+                    <span class="text-xs text-slate-400"
+                      >Last learned 1d ago</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-slate-300 group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="group bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 transition-all shadow-sm hover:shadow-md cursor-pointer relative"
+                >
+                  <div class="absolute top-5 right-5 size-10">
+                    <svg class="size-full -rotate-90" viewBox="0 0 36 36">
+                      <path
+                        class="text-slate-100 dark:text-slate-700"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                      ></path>
+                      <path
+                        class="text-amber-500"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-dasharray="15, 100"
+                        stroke-width="3"
+                      ></path>
+                    </svg>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-slate-700 dark:text-slate-300"
+                    >
+                      15%
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <div
+                      class="size-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white mb-3 shadow-lg shadow-amber-500/20"
+                    >
+                      <span class="material-symbols-outlined">terminal</span>
+                    </div>
+                    <h3
+                      class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-amber-500 transition-colors"
+                    >
+                      Tech Terms
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                      IT &amp; Programming
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-2 mb-4">
+                    <span
+                      class="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide"
+                      >Technical</span
+                    >
+                    <span
+                      class="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wide"
+                      >Beginner</span
+                    >
+                  </div>
+                  <div
+                    class="pt-4 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center"
+                  >
+                    <span class="text-xs text-slate-400"
+                      >Last learned 5d ago</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-slate-300 group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
+                    >
+                  </div>
+                </div>
+                <button
+                  class="flex flex-col items-center justify-center gap-4 p-5 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-slate-800/50 transition-all group"
+                >
+                  <div
+                    class="size-12 rounded-full bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-900/30 text-slate-400 group-hover:text-blue-600 transition-colors flex items-center justify-center"
+                  >
+                    <span class="material-symbols-outlined">add</span>
+                  </div>
+                  <span
+                    class="font-bold text-slate-500 dark:text-slate-400 group-hover:text-blue-600 transition-colors"
+                    >Create New Package</span
+                  >
+                </button>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div
+                class="bg-gradient-to-br from-blue-600 to-indigo-700 p-6 rounded-2xl shadow-lg shadow-blue-500/20 text-white relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 -mr-4 -mt-4 size-24 bg-white/10 rounded-full blur-2xl"
+                ></div>
+                <div
+                  class="flex justify-between items-start mb-6 relative z-10"
+                >
+                  <div>
+                    <h3 class="font-bold text-lg">Daily Goal</h3>
+                    <p class="text-blue-100 text-sm mt-1">Keep the momentum!</p>
+                  </div>
+                  <div
+                    class="p-2 bg-white/20 rounded-lg backdrop-blur-sm border border-white/10"
+                  >
+                    <span class="material-symbols-outlined text-white"
+                      >emoji_events</span
+                    >
+                  </div>
+                </div>
+                <div class="relative z-10">
+                  <div
+                    class="flex justify-between text-xs font-medium text-blue-100 mb-2"
+                  >
+                    <span>12 learned</span>
+                    <span>Goal: 20</span>
+                  </div>
+                  <div class="w-full bg-black/20 rounded-full h-2.5">
+                    <div
+                      class="bg-white h-2.5 rounded-full shadow transition-all duration-500 relative"
+                      style="width: 60%"
+                    >
+                      <div
+                        class="absolute right-0 top-1/2 -translate-y-1/2 size-3 bg-white rounded-full shadow-md"
+                      ></div>
+                    </div>
+                  </div>
+                  <p class="text-xs text-blue-200 mt-4 text-center">
+                    8 more words to reach your goal today!
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm"
+              >
+                <div class="flex items-center justify-between mb-6">
+                  <h3 class="font-bold text-slate-900 dark:text-white">
+                    Achievements
+                  </h3>
+                  <button
+                    class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide hover:underline"
+                  >
+                    View All
+                  </button>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="size-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 flex items-center justify-center ring-4 ring-white dark:ring-slate-800"
+                    >
+                      <span class="material-symbols-outlined text-[20px] filled"
+                        >bolt</span
+                      >
+                    </div>
+                    <div class="flex-1">
+                      <h4
+                        class="text-sm font-bold text-slate-900 dark:text-white"
+                      >
+                        7 Day Streak
+                      </h4>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">
+                        Maintained for 7 days
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="size-10 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center ring-4 ring-white dark:ring-slate-800"
+                    >
+                      <span class="material-symbols-outlined text-[20px] filled"
+                        >workspace_premium</span
+                      >
+                    </div>
+                    <div class="flex-1">
+                      <h4
+                        class="text-sm font-bold text-slate-900 dark:text-white"
+                      >
+                        Vocab Master
+                      </h4>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">
+                        Learned 1000 words
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 opacity-50">
+                    <div
+                      class="size-10 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 flex items-center justify-center ring-4 ring-white dark:ring-slate-800"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >lock</span
+                      >
+                    </div>
+                    <div class="flex-1">
+                      <h4
+                        class="text-sm font-bold text-slate-900 dark:text-white"
+                      >
+                        Speed Reader
+                      </h4>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">
+                        Complete 50 quizzes
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-indigo-50 dark:bg-slate-800/50 p-5 rounded-2xl border border-indigo-100 dark:border-slate-700"
+              >
+                <div class="flex items-start gap-3">
+                  <div
+                    class="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg text-indigo-600 dark:text-indigo-400 shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >update</span
+                    >
+                  </div>
+                  <div>
+                    <h4
+                      class="font-bold text-sm text-slate-900 dark:text-white mb-1"
+                    >
+                      Review Time
+                    </h4>
+                    <p
+                      class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3"
+                    >
+                      You have
+                      <span
+                        class="font-bold text-indigo-600 dark:text-indigo-400"
+                        >25 words</span
+                      >
+                      scheduled for review today based on spaced repetition.
+                    </p>
+                    <button
+                      class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors flex items-center gap-1"
+                    >
+                      Start Review
+                      <span class="material-symbols-outlined text-[14px]"
+                        >arrow_forward</span
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

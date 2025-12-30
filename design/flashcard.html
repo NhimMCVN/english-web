@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html class="dark" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tùy chỉnh Bài kiểm tra - VocabMaster</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2b6cee",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1b2537",
+              "secondary-text": "#92a4c9",
+            },
+            fontFamily: {
+              display: ["Lexend", "sans-serif"],
+              body: ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #101622;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #232f48;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2b6cee;
+      }
+      input[type="range"] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+      }
+      input[type="range"]:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-x-hidden text-[#111418] dark:text-white"
+  >
+    <div
+      class="w-full border-b border-solid border-[#e5e7eb] dark:border-[#232f48] bg-surface-light dark:bg-[#111722]"
+    >
+      <div class="layout-container flex justify-center w-full">
+        <div
+          class="flex max-w-[960px] flex-1 items-center justify-between px-4 py-3 lg:px-10"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center justify-center rounded-lg bg-primary/10 p-2 text-primary"
+            >
+              <span class="material-symbols-outlined">school</span>
+            </div>
+            <h2
+              class="text-lg font-bold leading-tight tracking-[-0.015em] text-[#111418] dark:text-white"
+            >
+              VocabMaster
+            </h2>
+          </div>
+          <div class="flex items-center gap-4">
+            <div
+              class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-background-light dark:bg-[#232f48]"
+            >
+              <span
+                class="material-symbols-outlined text-[20px] text-secondary-text"
+                >search</span
+              >
+              <span class="text-sm text-secondary-text">Tìm kiếm...</span>
+            </div>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-[#232f48]"
+              data-alt="User profile avatar showing a smiling person"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlWEg3YvuA8DhyuYNXUQbZDerXw4Qt_kOX0hP0CcvxFhvenLfD8sXTgG2woNpGjwXJIr_YGCPe8eL1ttqC7GVeXiw3aPfwqav_LeNjFV9lnej_1jjwsbQaDLUznUdMyvz5bhbaxzmimE_JX7sTMfgtgcRrlHzlFob4YodBbcyIKfxgJNOpNp5RpTl1wUs5mJ0wfJ5d_XuvKxsK6phPMBHBgDDVTjvMv1XlDIWScTMfBN6UNGNwjSxy9Rjwqc6K2lYoaamotLez30Yv');
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="flex-1 flex justify-center py-6 w-full">
+      <div
+        class="layout-content-container flex flex-col max-w-[960px] w-full px-4 md:px-6 gap-8"
+      >
+        <div
+          class="flex flex-wrap justify-between items-end gap-4 pb-4 border-b border-[#e5e7eb] dark:border-[#232f48]"
+        >
+          <div class="flex flex-col gap-2">
+            <h1
+              class="text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]"
+            >
+              Thiết lập bài kiểm tra
+            </h1>
+            <p
+              class="text-[#637588] dark:text-secondary-text text-base font-normal"
+            >
+              Tùy chỉnh thông số để tối ưu hóa việc học của bạn
+            </p>
+          </div>
+          <button
+            class="flex items-center justify-center gap-2 rounded-xl h-10 px-5 bg-[#e5e7eb] dark:bg-[#232f48] text-[#111418] dark:text-white hover:bg-[#d1d5db] dark:hover:bg-[#2f3e5c] transition-colors text-sm font-bold leading-normal"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >arrow_back</span
+            >
+            <span class="truncate">Dashboard</span>
+          </button>
+        </div>
+        <section class="flex flex-col gap-4">
+          <h2 class="text-xl font-bold leading-tight flex items-center gap-2">
+            <span
+              class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary text-sm font-bold"
+              >1</span
+            >
+            Chọn chế độ thi
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
+          >
+            <div
+              class="group relative cursor-pointer flex flex-col gap-3 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border-2 border-primary shadow-sm hover:shadow-md transition-all"
+            >
+              <div class="absolute top-3 right-3 text-primary">
+                <span class="material-symbols-outlined fill-1"
+                  >check_circle</span
+                >
+              </div>
+              <div
+                class="size-12 rounded-lg bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 flex items-center justify-center mb-2"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >dashboard_customize</span
+                >
+              </div>
+              <div>
+                <p class="text-base font-bold leading-normal">Tổng hợp</p>
+                <p
+                  class="text-[#637588] dark:text-secondary-text text-sm leading-normal"
+                >
+                  Kết hợp nhiều dạng
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative cursor-pointer flex flex-col gap-3 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border-2 border-primary/40 dark:border-primary/40 bg-blue-50/30 dark:bg-blue-900/10 hover:border-primary/60 transition-all"
+            >
+              <div class="absolute top-3 right-3">
+                <input
+                  checked=""
+                  class="w-5 h-5 rounded text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-[#1b2537] cursor-pointer"
+                  type="checkbox"
+                />
+              </div>
+              <div
+                class="size-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-2"
+              >
+                <span class="material-symbols-outlined text-3xl">quiz</span>
+              </div>
+              <div>
+                <p class="text-base font-bold leading-normal">Trắc nghiệm</p>
+                <p
+                  class="text-[#637588] dark:text-secondary-text text-sm leading-normal"
+                >
+                  Chọn 1 đáp án đúng
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative cursor-pointer flex flex-col gap-3 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border-2 border-transparent hover:border-primary/50 hover:bg-white dark:hover:bg-[#232f48] transition-all"
+            >
+              <div class="absolute top-3 right-3">
+                <input
+                  class="w-5 h-5 rounded text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-[#1b2537] cursor-pointer"
+                  type="checkbox"
+                />
+              </div>
+              <div
+                class="size-12 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-2"
+              >
+                <span class="material-symbols-outlined text-3xl">style</span>
+              </div>
+              <div>
+                <p class="text-base font-bold leading-normal">Flashcard</p>
+                <p
+                  class="text-[#637588] dark:text-secondary-text text-sm leading-normal"
+                >
+                  Lật thẻ để ghi nhớ
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative cursor-pointer flex flex-col gap-3 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border-2 border-primary/40 dark:border-primary/40 bg-blue-50/30 dark:bg-blue-900/10 hover:border-primary/60 transition-all"
+            >
+              <div class="absolute top-3 right-3">
+                <input
+                  checked=""
+                  class="w-5 h-5 rounded text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-[#1b2537] cursor-pointer"
+                  type="checkbox"
+                />
+              </div>
+              <div
+                class="size-12 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center mb-2"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >edit_note</span
+                >
+              </div>
+              <div>
+                <p class="text-base font-bold leading-normal">Viết từ</p>
+                <p
+                  class="text-[#637588] dark:text-secondary-text text-sm leading-normal"
+                >
+                  Gõ lại từ chính xác
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative cursor-pointer flex flex-col gap-3 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border-2 border-transparent hover:border-primary/50 hover:bg-white dark:hover:bg-[#232f48] transition-all"
+            >
+              <div class="absolute top-3 right-3">
+                <input
+                  class="w-5 h-5 rounded text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-[#1b2537] cursor-pointer"
+                  type="checkbox"
+                />
+              </div>
+              <div
+                class="size-12 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-2"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >join_inner</span
+                >
+              </div>
+              <div>
+                <p class="text-base font-bold leading-normal">Ghép từ</p>
+                <p
+                  class="text-[#637588] dark:text-secondary-text text-sm leading-normal"
+                >
+                  Nối từ với nghĩa
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="flex flex-col gap-4">
+          <h2 class="text-xl font-bold leading-tight flex items-center gap-2">
+            <span
+              class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary text-sm font-bold"
+              >2</span
+            >
+            Phạm vi từ vựng
+          </h2>
+          <div
+            class="bg-surface-light dark:bg-surface-dark p-1 rounded-xl flex flex-col sm:flex-row gap-1"
+          >
+            <button
+              class="flex-1 py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-[#232f48] text-[#637588] dark:text-secondary-text font-medium text-sm flex items-center justify-center gap-2 transition-all"
+            >
+              <span class="material-symbols-outlined">topic</span>
+              Topic hiện tại
+            </button>
+            <button
+              class="flex-1 py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-[#232f48] text-[#637588] dark:text-secondary-text font-medium text-sm flex items-center justify-center gap-2 transition-all"
+            >
+              <span class="material-symbols-outlined">folder_open</span>
+              Cả Package
+            </button>
+            <button
+              class="flex-1 py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-[#232f48] text-[#637588] dark:text-secondary-text font-medium text-sm flex items-center justify-center gap-2 transition-all"
+            >
+              <span class="material-symbols-outlined">star</span>
+              Đã đánh dấu sao
+            </button>
+            <button
+              class="flex-1 py-3 px-4 rounded-lg bg-white dark:bg-[#2b3b55] shadow-sm text-primary font-bold text-sm flex items-center justify-center gap-2 transition-all"
+            >
+              <span class="material-symbols-outlined">library_add</span>
+              Tổng hợp
+            </button>
+          </div>
+          <div
+            class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 border-2 border-primary/10 dark:border-primary/20 flex flex-col gap-4 animate-in fade-in slide-in-from-top-2 duration-300"
+          >
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-[#111418] dark:text-white">
+                  Chọn chủ đề &amp; gói từ
+                </h3>
+                <div class="flex gap-3 text-xs font-medium">
+                  <button
+                    class="text-primary hover:text-blue-600 transition-colors"
+                  >
+                    Chọn tất cả
+                  </button>
+                  <span class="text-gray-300 dark:text-gray-600">|</span>
+                  <button
+                    class="text-[#637588] hover:text-[#111418] dark:text-secondary-text dark:hover:text-white transition-colors"
+                  >
+                    Bỏ chọn hết
+                  </button>
+                </div>
+              </div>
+              <div class="relative group">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <span class="material-symbols-outlined text-[#92a4c9]"
+                    >search</span
+                  >
+                </div>
+                <input
+                  class="block w-full pl-10 pr-3 py-2.5 border border-[#e5e7eb] dark:border-[#232f48] rounded-lg leading-5 bg-white dark:bg-[#111722] text-[#111418] dark:text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm transition-all shadow-sm"
+                  placeholder="Tìm kiếm gói từ hoặc chủ đề..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="max-h-[280px] overflow-y-auto pr-2 -mr-2 space-y-4">
+              <div>
+                <div
+                  class="flex items-center gap-2 mb-2 px-1 sticky top-0 bg-surface-light dark:bg-surface-dark z-10 py-1"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px] text-[#637588]"
+                    >folder</span
+                  >
+                  <span
+                    class="text-xs font-bold uppercase text-[#637588] tracking-wider"
+                    >IELTS Core Vocabulary</span
+                  >
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  <label
+                    class="relative flex items-center justify-between p-3 rounded-lg border border-[#e5e7eb] dark:border-[#232f48] bg-white dark:bg-[#111722] hover:border-primary/50 cursor-pointer transition-colors group select-none"
+                  >
+                    <div class="flex items-center gap-3 w-full">
+                      <input
+                        checked=""
+                        class="w-5 h-5 rounded text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-[#1b2537] cursor-pointer"
+                        type="checkbox"
+                      />
+                      <div class="flex flex-col flex-1">
+                        <span
+                          class="text-sm font-bold text-[#111418] dark:text-white"
+                          >Education</span
+                        >
+                        <span class="text-xs text-[#637588]">45 từ vựng</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label
+                    class="relative flex items-center justify-between p-3 rounded-lg border border-[#e5e7eb] dark:border-[#232f48] bg-white dark:bg-[#111722] hover:border-primary/50 cursor-pointer transition-colors group select-none"
+                  >
+                    <div class="flex items-center gap-3 w-full">
+                      <input
+                        class="w-5 h-5 rounded text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-[#1b2537] cursor-pointer"
+                        type="checkbox"
+                      />
+                      <div class="flex flex-col flex-1">
+                        <span
+                          class="text-sm font-bold text-[#111418] dark:text-white"
+                          >Environment</span
+                        >
+                        <span class="text-xs text-[#637588]">32 từ vựng</span>
+                      </div>
+                    </div>
+                  </label>
+                  <label
+                    class="relative flex items-center justify-between p-3 rounded-lg border border-[#e5e7eb] dark:border-[#232f48] bg-white dark:bg-[#111722] hover:border-primary/50 cursor-pointer transition-colors group select-none"
+                  >
+                    <div class="flex items-center gap-3 w-full">
+                      <input
+                        checked=""
+                        class="w-5 h-5 rounded text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-[#1b2537] cursor-pointer"
+                        type="checkbox"
+                      />
+                      <div class="flex flex-col flex-1">
+                        <span
+                          class="text-sm font-bold text-[#111418] dark:text-white"
+                          >Technology</span
+                        >
+                        <span class="text-xs text-[#637588]">50 từ vựng</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex items-center gap-2 mb-2 px-1 sticky top-0 bg-surface-light dark:bg-surface-dark z-10 py-1"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px] text-[#637588]"
+                    >folder</span
+                  >
+                  <span
+                    class="text-xs font-bold uppercase text-[#637588] tracking-wider"
+                    >Business English</span
+                  >
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  <label
+                    class="relative flex items-center justify-between p-3 rounded-lg border border-[#e5e7eb] dark:border-[#232f48] bg-white dark:bg-[#111722] hover:border-primary/50 cursor-pointer transition-colors group select-none"
+                  >
+                    <div class="flex items-center gap-3 w-full">
+                      <input
+                        checked=""
+                        class="w-5 h-5 rounded text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-[#1b2537] cursor-pointer"
+                        type="checkbox"
+                      />
+                      <div class="flex flex-col flex-1">
+                        <span
+                          class="text-sm font-bold text-[#111418] dark:text-white"
+                          >Office Life</span
+                        >
+                        <span class="text-xs text-[#637588]">28 từ vựng</span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="pt-3 border-t border-[#e5e7eb] dark:border-[#232f48] flex flex-wrap gap-3 items-center justify-between"
+            >
+              <div class="flex items-center gap-2 px-1">
+                <span class="material-symbols-outlined text-green-500 text-sm"
+                  >check_circle</span
+                >
+                <p class="text-sm text-[#637588] dark:text-secondary-text">
+                  Đã chọn:
+                  <span class="font-bold text-[#111418] dark:text-white"
+                    >3 Topics (123 từ)</span
+                  >
+                </p>
+              </div>
+              <p
+                class="text-xs text-[#637588] dark:text-secondary-text italic bg-gray-100 dark:bg-[#232f48] px-2 py-1 rounded"
+              >
+                *Khuyên dùng: Chọn tối thiểu 20 từ để bài thi hiệu quả
+              </p>
+            </div>
+          </div>
+        </section>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <section class="flex flex-col gap-5">
+            <h2 class="text-xl font-bold leading-tight flex items-center gap-2">
+              <span
+                class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary text-sm font-bold"
+                >3</span
+              >
+              Cấu hình bài thi
+            </h2>
+            <div
+              class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl flex flex-col gap-4"
+            >
+              <div class="flex justify-between items-center">
+                <label class="font-bold text-sm">Số lượng câu hỏi</label>
+                <span
+                  class="px-2 py-1 rounded bg-primary/20 text-primary text-xs font-bold"
+                  >20 câu</span
+                >
+              </div>
+              <div class="relative w-full h-6 flex items-center">
+                <div
+                  class="absolute w-full h-1.5 bg-gray-200 dark:bg-[#232f48] rounded-full"
+                ></div>
+                <div
+                  class="absolute h-1.5 bg-primary rounded-full"
+                  style="width: 40%"
+                ></div>
+                <input
+                  class="absolute w-full h-full opacity-0 cursor-pointer z-10"
+                  max="50"
+                  min="5"
+                  type="range"
+                  value="20"
+                />
+                <div
+                  class="absolute size-5 bg-primary rounded-full border-2 border-white dark:border-[#101622] shadow-md top-1/2 -translate-y-1/2 left-[40%] pointer-events-none transition-all"
+                ></div>
+              </div>
+              <div
+                class="flex justify-between text-xs text-[#637588] dark:text-secondary-text font-medium"
+              >
+                <span>5</span>
+                <span>50</span>
+              </div>
+            </div>
+            <div
+              class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl flex items-center justify-between"
+            >
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary"
+                    >timer</span
+                  >
+                  <label class="font-bold text-sm">Giới hạn thời gian</label>
+                </div>
+                <p class="text-xs text-[#637588] dark:text-secondary-text">
+                  Tự động nộp bài khi hết giờ
+                </p>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="flex items-center border border-[#e5e7eb] dark:border-[#232f48] rounded-lg overflow-hidden h-9"
+                >
+                  <input
+                    class="w-12 bg-transparent text-center text-sm font-bold focus:outline-none border-none p-0 h-full"
+                    type="number"
+                    value="15"
+                  />
+                  <span
+                    class="bg-gray-100 dark:bg-[#232f48] px-2 text-xs text-[#637588] h-full flex items-center"
+                    >phút</span
+                  >
+                </div>
+                <div
+                  class="w-11 h-6 bg-primary rounded-full relative cursor-pointer"
+                >
+                  <div
+                    class="absolute right-1 top-1 size-4 bg-white rounded-full shadow-sm transition-transform"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="flex flex-col gap-5">
+            <h2 class="text-xl font-bold leading-tight flex items-center gap-2">
+              <span
+                class="flex items-center justify-center size-8 rounded-full bg-primary/20 text-primary text-sm font-bold"
+                >4</span
+              >
+              Nâng cao
+            </h2>
+            <div
+              class="bg-surface-light dark:bg-surface-dark rounded-xl divide-y divide-[#e5e7eb] dark:divide-[#232f48]"
+            >
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="material-symbols-outlined text-[#637588] dark:text-secondary-text mt-0.5"
+                    >shuffle</span
+                  >
+                  <div>
+                    <p class="text-sm font-bold">Xáo trộn câu hỏi</p>
+                    <p
+                      class="text-xs text-[#637588] dark:text-secondary-text mt-0.5"
+                    >
+                      Thay đổi thứ tự câu hỏi ngẫu nhiên
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="w-11 h-6 bg-primary rounded-full relative cursor-pointer flex-shrink-0"
+                >
+                  <div
+                    class="absolute right-1 top-1 size-4 bg-white rounded-full shadow-sm"
+                  ></div>
+                </div>
+              </div>
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="material-symbols-outlined text-[#637588] dark:text-secondary-text mt-0.5"
+                    >lightbulb</span
+                  >
+                  <div>
+                    <p class="text-sm font-bold">Hiển thị đáp án ngay</p>
+                    <p
+                      class="text-xs text-[#637588] dark:text-secondary-text mt-0.5"
+                    >
+                      Biết kết quả ngay sau khi chọn
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="w-11 h-6 bg-gray-300 dark:bg-[#232f48] rounded-full relative cursor-pointer flex-shrink-0"
+                >
+                  <div
+                    class="absolute left-1 top-1 size-4 bg-white rounded-full shadow-sm"
+                  ></div>
+                </div>
+              </div>
+              <div class="p-4 flex items-center justify-between">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="material-symbols-outlined text-[#637588] dark:text-secondary-text mt-0.5"
+                    >repeat</span
+                  >
+                  <div>
+                    <p class="text-sm font-bold">Lặp lại thông minh</p>
+                    <p
+                      class="text-xs text-[#637588] dark:text-secondary-text mt-0.5"
+                    >
+                      Ưu tiên các từ bạn hay sai
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="w-11 h-6 bg-primary rounded-full relative cursor-pointer flex-shrink-0"
+                >
+                  <div
+                    class="absolute right-1 top-1 size-4 bg-white rounded-full shadow-sm"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="sticky bottom-4 md:bottom-8 z-20 mt-4">
+          <div
+            class="bg-surface-light dark:bg-[#1b2537] rounded-2xl p-4 shadow-xl border border-[#e5e7eb] dark:border-[#232f48] flex flex-col sm:flex-row items-center justify-between gap-4 max-w-[960px] mx-auto backdrop-blur-xl bg-opacity-95 dark:bg-opacity-95"
+          >
+            <div
+              class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-sm w-full sm:w-auto text-center sm:text-left"
+            >
+              <div
+                class="flex items-center gap-2 text-[#637588] dark:text-secondary-text"
+              >
+                <span class="material-symbols-outlined"
+                  >format_list_numbered</span
+                >
+                <span>20 Câu hỏi</span>
+              </div>
+              <div
+                class="hidden sm:block w-px h-4 bg-gray-300 dark:bg-gray-600"
+              ></div>
+              <div
+                class="flex items-center gap-2 text-[#637588] dark:text-secondary-text"
+              >
+                <span class="material-symbols-outlined">schedule</span>
+                <span>15 Phút</span>
+              </div>
+              <div
+                class="hidden sm:block w-px h-4 bg-gray-300 dark:bg-gray-600"
+              ></div>
+              <div
+                class="flex items-center gap-2 text-[#637588] dark:text-secondary-text"
+              >
+                <span class="material-symbols-outlined">category</span>
+                <span>Tổng hợp</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 w-full sm:w-auto">
+              <button
+                class="hidden sm:flex h-12 w-12 items-center justify-center rounded-xl bg-transparent hover:bg-gray-100 dark:hover:bg-[#232f48] text-[#637588] dark:text-secondary-text transition-colors"
+                title="Lưu cài đặt này"
+              >
+                <span class="material-symbols-outlined">save</span>
+              </button>
+              <button
+                class="flex-1 sm:flex-none h-12 px-8 rounded-xl bg-primary hover:bg-blue-600 text-white font-bold text-base shadow-lg shadow-blue-500/20 transition-all transform active:scale-95 flex items-center justify-center gap-2"
+              >
+                <span>Bắt đầu làm bài</span>
+                <span class="material-symbols-outlined text-[20px]"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

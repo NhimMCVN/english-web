@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>VocabMaster - Topic Detail</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Lexend", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .material-symbols-outlined.filled {
+        font-variation-settings: "FILL" 1;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #334155;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans text-slate-900 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 antialiased h-screen flex overflow-hidden selection:bg-primary-500 selection:text-white transition-colors duration-300"
+  >
+    <aside
+      class="w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0 z-30 transition-colors duration-300"
+    >
+      <div
+        class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-800/50"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="size-9 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20"
+          >
+            <span class="material-symbols-outlined text-[22px]">school</span>
+          </div>
+          <h1
+            class="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white"
+          >
+            VocabMaster
+          </h1>
+        </div>
+      </div>
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-8">
+        <div>
+          <div
+            class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-2"
+          >
+            Menu
+          </div>
+          <nav class="flex flex-col gap-1">
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
+              href="#"
+            >
+              <span class="material-symbols-outlined">dashboard</span>
+              Dashboard
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
+              href="#"
+            >
+              <span class="material-symbols-outlined">forum</span>
+              Community
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white transition-colors font-medium"
+              href="#"
+            >
+              <span class="material-symbols-outlined">settings</span>
+              Settings
+            </a>
+          </nav>
+        </div>
+        <div>
+          <div class="flex items-center justify-between mb-4 px-2">
+            <div
+              class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+            >
+              My Packages
+            </div>
+            <button
+              class="text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >add_circle</span
+              >
+            </button>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col">
+              <div
+                class="group flex items-center justify-between gap-3 p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer mb-2"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="size-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0"
+                  >
+                    <span class="material-symbols-outlined filled text-[20px]"
+                      >folder</span
+                    >
+                  </div>
+                  <h3
+                    class="font-bold text-sm text-slate-900 dark:text-white truncate"
+                  >
+                    IELTS Core
+                  </h3>
+                </div>
+                <span
+                  class="material-symbols-outlined text-slate-400 text-[20px] rotate-180 transform transition-transform"
+                  >expand_less</span
+                >
+              </div>
+              <div
+                class="pl-5 flex flex-col gap-1 border-l-2 border-slate-100 dark:border-slate-800 ml-4"
+              >
+                <a
+                  class="flex items-center justify-between px-4 py-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium text-sm border-l-2 border-blue-500 -ml-[2px]"
+                  href="#"
+                >
+                  <span>Environment</span>
+                  <span
+                    class="text-[10px] font-bold bg-blue-100 dark:bg-blue-800 px-1.5 py-0.5 rounded text-blue-600 dark:text-blue-300"
+                    >45</span
+                  >
+                </a>
+                <a
+                  class="flex items-center justify-between px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-sm border-l-2 border-transparent -ml-[2px]"
+                  href="#"
+                >
+                  <span>Technology</span>
+                  <span
+                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-slate-500"
+                    >32</span
+                  >
+                </a>
+                <a
+                  class="flex items-center justify-between px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-sm border-l-2 border-transparent -ml-[2px]"
+                  href="#"
+                >
+                  <span>Education</span>
+                  <span
+                    class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-slate-500"
+                    >28</span
+                  >
+                </a>
+              </div>
+            </div>
+            <div
+              class="group flex items-center justify-between gap-3 p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >folder</span
+                  >
+                </div>
+                <h3
+                  class="font-medium text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white truncate"
+                >
+                  TOEIC 600
+                </h3>
+              </div>
+              <span class="material-symbols-outlined text-slate-400 text-[20px]"
+                >expand_more</span
+              >
+            </div>
+            <div
+              class="group flex items-center justify-between gap-3 p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >folder</span
+                  >
+                </div>
+                <h3
+                  class="font-medium text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white truncate"
+                >
+                  Tech Terms
+                </h3>
+              </div>
+              <span class="material-symbols-outlined text-slate-400 text-[20px]"
+                >expand_more</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-100 dark:border-slate-800">
+        <button
+          class="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-left"
+        >
+          <div
+            class="size-10 rounded-full bg-cover bg-center shrink-0 border border-slate-200 dark:border-slate-700"
+            style="
+              background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDT2oXU45agU91W5nwhcjArDd5AYcqnLT4GA1N7XZZv6GOSFMmf77uB4fVLBu5Qfu_dkYZ3MHh2pVkmb1bwLVo9WhA3satka3mQgRJPVn5Qo0OM8ed_kKybRg5FaUOqcjO08xLBb6i62d1flfFlnotUTY3mbhyCaUCitC38iCuNLJYbhF6vDXL09mp3HIQTSJLJzI5T6KLIJiUiPk0dXVdVFA7ucBCmkyHA6EgX6K0zgNBI4159Zmgqngcz2xQVvrS0986N5vj9pDGI');
+            "
+          ></div>
+          <div class="flex-1 min-w-0">
+            <p
+              class="font-bold text-sm text-slate-900 dark:text-white truncate"
+            >
+              Alex Morgan
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 truncate">
+              Free Plan
+            </p>
+          </div>
+          <span class="material-symbols-outlined text-slate-400"
+            >expand_more</span
+          >
+        </button>
+      </div>
+    </aside>
+    <main
+      class="flex-1 flex flex-col min-w-0 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300"
+    >
+      <header
+        class="h-16 flex items-center justify-between px-6 lg:px-10 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-20"
+      >
+        <button class="lg:hidden mr-4 text-slate-500">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="flex-1 max-w-md">
+          <div class="relative group">
+            <span
+              class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-500 transition-colors material-symbols-outlined text-[20px]"
+              >search</span
+            >
+            <input
+              class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-full py-2 pl-10 pr-4 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 transition-all shadow-sm"
+              placeholder="Search words in Environment..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-3 ml-4">
+          <button
+            class="relative size-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-400 dark:hover:text-white transition-colors"
+          >
+            <span class="material-symbols-outlined">notifications</span>
+            <span
+              class="absolute top-2.5 right-2.5 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"
+            ></span>
+          </button>
+          <div
+            class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+          >
+            <span class="material-symbols-outlined text-amber-500 text-[18px]"
+              >local_fire_department</span
+            >
+            <span class="text-sm font-bold text-slate-700 dark:text-slate-300"
+              >12 Days</span
+            >
+          </div>
+        </div>
+      </header>
+      <div class="flex-1 overflow-y-auto p-6 lg:p-10 scroll-smooth">
+        <div class="max-w-6xl mx-auto flex flex-col gap-10">
+          <div class="flex flex-col gap-8">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-4"
+            >
+              <div>
+                <div
+                  class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-2 uppercase tracking-wide"
+                >
+                  <span>IELTS Core</span>
+                  <span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >
+                  <span class="text-blue-600 dark:text-blue-400"
+                    >Environment</span
+                  >
+                </div>
+                <h1
+                  class="font-display text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2"
+                >
+                  Environment
+                </h1>
+                <p class="text-slate-600 dark:text-slate-400">
+                  Essential vocabulary related to nature, climate change, and
+                  preservation.
+                </p>
+              </div>
+              <div
+                class="flex gap-6 bg-white dark:bg-slate-800 px-6 py-3 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700/50"
+              >
+                <div class="text-center">
+                  <div
+                    class="text-2xl font-bold text-slate-900 dark:text-white"
+                  >
+                    45
+                  </div>
+                  <div
+                    class="text-xs text-slate-500 dark:text-slate-400 font-medium"
+                  >
+                    Total
+                  </div>
+                </div>
+                <div class="w-px bg-slate-200 dark:bg-slate-700"></div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-emerald-500">15</div>
+                  <div
+                    class="text-xs text-slate-500 dark:text-slate-400 font-medium"
+                  >
+                    Mastered
+                  </div>
+                </div>
+                <div class="w-px bg-slate-200 dark:bg-slate-700"></div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-amber-500">10</div>
+                  <div
+                    class="text-xs text-slate-500 dark:text-slate-400 font-medium"
+                  >
+                    Learning
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div
+                class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col"
+              >
+                <h3
+                  class="font-display font-bold text-lg text-slate-900 dark:text-white mb-4 flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-blue-500 filled"
+                    >bolt</span
+                  >
+                  Quick Test
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
+                  <button
+                    class="group relative flex flex-col items-center justify-center gap-3 p-4 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/20 dark:to-indigo-800/20 rounded-xl border border-indigo-200 dark:border-indigo-800/50 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all duration-200"
+                  >
+                    <div
+                      class="size-10 bg-white dark:bg-indigo-900/50 rounded-full flex items-center justify-center text-indigo-600 dark:text-indigo-400 shadow-sm group-hover:scale-110 transition-transform"
+                    >
+                      <span class="material-symbols-outlined">style</span>
+                    </div>
+                    <div class="text-center">
+                      <span
+                        class="block font-bold text-slate-900 dark:text-white"
+                        >Flashcard Nhanh</span
+                      >
+                      <span class="text-xs text-slate-500 dark:text-slate-400"
+                        >Review visually</span
+                      >
+                    </div>
+                  </button>
+                  <button
+                    class="group relative flex flex-col items-center justify-center gap-3 p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 rounded-xl border border-emerald-200 dark:border-emerald-800/50 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-200"
+                  >
+                    <div
+                      class="size-10 bg-white dark:bg-emerald-900/50 rounded-full flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-sm group-hover:scale-110 transition-transform"
+                    >
+                      <span class="material-symbols-outlined">quiz</span>
+                    </div>
+                    <div class="text-center">
+                      <span
+                        class="block font-bold text-slate-900 dark:text-white"
+                        >Trắc nghiệm Nhanh</span
+                      >
+                      <span class="text-xs text-slate-500 dark:text-slate-400"
+                        >Multiple choice</span
+                      >
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col gap-6 h-full">
+                <div
+                  class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col flex-1"
+                >
+                  <h3
+                    class="font-display font-bold text-lg text-slate-900 dark:text-white mb-4 flex items-center gap-2"
+                  >
+                    <span
+                      class="material-symbols-outlined text-purple-500 filled"
+                      >tune</span
+                    >
+                    Custom Test
+                  </h3>
+                  <div class="flex-1 flex flex-col justify-center">
+                    <button
+                      class="flex-1 group flex items-center justify-between p-5 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30 hover:-translate-y-0.5 transition-all duration-200 text-white w-full text-left"
+                    >
+                      <div class="flex flex-col gap-1">
+                        <span class="font-bold text-xl"
+                          >Tùy chỉnh Bài kiểm tra</span
+                        >
+                        <span
+                          class="text-purple-100 text-sm font-medium opacity-90"
+                          >Create a test with specific settings</span
+                        >
+                      </div>
+                      <div
+                        class="size-12 bg-white/20 rounded-xl flex items-center justify-center group-hover:bg-white/30 transition-colors"
+                      >
+                        <span class="material-symbols-outlined text-[28px]"
+                          >arrow_forward</span
+                        >
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <button
+                  class="w-full bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-md transition-all group text-left flex items-center justify-between"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="size-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300"
+                    >
+                      <span class="material-symbols-outlined text-[26px]"
+                        >add</span
+                      >
+                    </div>
+                    <div>
+                      <h3
+                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                      >
+                        Add Word to Topic
+                      </h3>
+                      <p class="text-sm text-slate-500 dark:text-slate-400">
+                        Expand your vocabulary list
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="size-10 rounded-full border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-400 group-hover:bg-blue-50 group-hover:border-blue-100 group-hover:text-blue-600 dark:group-hover:bg-blue-900/30 dark:group-hover:border-blue-800 dark:group-hover:text-blue-400 transition-all"
+                  >
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-10">
+            <div class="lg:col-span-2 space-y-6">
+              <div class="flex items-center justify-between">
+                <h2
+                  class="text-xl font-display font-bold text-slate-900 dark:text-white flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined filled text-blue-500"
+                    >list_alt</span
+                  >
+                  Topic Vocabulary
+                </h2>
+                <div class="flex gap-2">
+                  <button
+                    class="size-8 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-slate-500 hover:text-blue-600 shadow-sm border border-slate-200 dark:border-slate-700 transition-colors"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >sort</span
+                    >
+                  </button>
+                  <button
+                    class="size-8 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-slate-500 hover:text-blue-600 shadow-sm border border-slate-200 dark:border-slate-700 transition-colors"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >filter_list</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div
+                  class="group bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md dark:hover:border-slate-600 transition-all relative overflow-hidden"
+                >
+                  <div
+                    class="absolute top-0 left-0 w-1 h-full bg-amber-400"
+                  ></div>
+                  <div class="flex justify-between items-start mb-2">
+                    <div class="flex gap-4">
+                      <div
+                        class="size-12 rounded-xl bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 flex items-center justify-center font-display font-bold text-xl"
+                      >
+                        Co
+                      </div>
+                      <div>
+                        <div class="flex items-center gap-3">
+                          <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white"
+                          >
+                            Contamination
+                          </h3>
+                          <span
+                            class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20"
+                            >Learning</span
+                          >
+                        </div>
+                        <div
+                          class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm"
+                        >
+                          <span class="font-mono">/kənˌtaməˈnāSH(ə)n/</span>
+                          <button
+                            class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                          >
+                            <span class="material-symbols-outlined text-[16px]"
+                              >volume_up</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="text-amber-400 transition-colors">
+                      <span class="material-symbols-outlined filled"
+                        >star_rate</span
+                      >
+                    </button>
+                  </div>
+                  <div class="pl-16">
+                    <p
+                      class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed"
+                    >
+                      The action or state of making or being made impure by
+                      polluting or poisoning.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-400 text-xs font-semibold tracking-wide uppercase"
+                        >noun</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="group bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md dark:hover:border-slate-600 transition-all relative overflow-hidden"
+                >
+                  <div
+                    class="absolute top-0 left-0 w-1 h-full bg-emerald-500"
+                  ></div>
+                  <div class="flex justify-between items-start mb-2">
+                    <div class="flex gap-4">
+                      <div
+                        class="size-12 rounded-xl bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 flex items-center justify-center font-display font-bold text-xl"
+                      >
+                        Re
+                      </div>
+                      <div>
+                        <div class="flex items-center gap-3">
+                          <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white"
+                          >
+                            Renewable
+                          </h3>
+                          <span
+                            class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20"
+                            >Mastered</span
+                          >
+                        </div>
+                        <div
+                          class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm"
+                        >
+                          <span class="font-mono">/rəˈn(y)o͞oəb(ə)l/</span>
+                          <button
+                            class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                          >
+                            <span class="material-symbols-outlined text-[16px]"
+                              >volume_up</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="text-slate-300 hover:text-amber-400 transition-colors"
+                    >
+                      <span class="material-symbols-outlined">star_rate</span>
+                    </button>
+                  </div>
+                  <div class="pl-16">
+                    <p
+                      class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed"
+                    >
+                      Capable of being renewed, typically a natural resource or
+                      source of energy.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-400 text-xs font-semibold tracking-wide uppercase"
+                        >adj</span
+                      >
+                      <span
+                        class="px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-xs font-semibold tracking-wide uppercase"
+                        >Common</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="group bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md dark:hover:border-slate-600 transition-all relative overflow-hidden"
+                >
+                  <div
+                    class="absolute top-0 left-0 w-1 h-full bg-slate-300 dark:bg-slate-600"
+                  ></div>
+                  <div class="flex justify-between items-start mb-2">
+                    <div class="flex gap-4">
+                      <div
+                        class="size-12 rounded-xl bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 flex items-center justify-center font-display font-bold text-xl"
+                      >
+                        Bi
+                      </div>
+                      <div>
+                        <div class="flex items-center gap-3">
+                          <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white"
+                          >
+                            Biodiversity
+                          </h3>
+                          <span
+                            class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600"
+                            >New</span
+                          >
+                        </div>
+                        <div
+                          class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm"
+                        >
+                          <span class="font-mono">/ˌbīōˌdīˈvərsədē/</span>
+                          <button
+                            class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                          >
+                            <span class="material-symbols-outlined text-[16px]"
+                              >volume_up</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="text-slate-300 hover:text-amber-400 transition-colors"
+                    >
+                      <span class="material-symbols-outlined">star_rate</span>
+                    </button>
+                  </div>
+                  <div class="pl-16">
+                    <p
+                      class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed"
+                    >
+                      The variety of life in the world or in a particular
+                      habitat or ecosystem.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-400 text-xs font-semibold tracking-wide uppercase"
+                        >noun</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="group bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md dark:hover:border-slate-600 transition-all relative overflow-hidden"
+                >
+                  <div
+                    class="absolute top-0 left-0 w-1 h-full bg-slate-300 dark:bg-slate-600"
+                  ></div>
+                  <div class="flex justify-between items-start mb-2">
+                    <div class="flex gap-4">
+                      <div
+                        class="size-12 rounded-xl bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 flex items-center justify-center font-display font-bold text-xl"
+                      >
+                        Em
+                      </div>
+                      <div>
+                        <div class="flex items-center gap-3">
+                          <h3
+                            class="text-xl font-bold text-slate-900 dark:text-white"
+                          >
+                            Emission
+                          </h3>
+                          <span
+                            class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600"
+                            >New</span
+                          >
+                        </div>
+                        <div
+                          class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm"
+                        >
+                          <span class="font-mono">/əˈmiSH(ə)n/</span>
+                          <button
+                            class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                          >
+                            <span class="material-symbols-outlined text-[16px]"
+                              >volume_up</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="text-slate-300 hover:text-amber-400 transition-colors"
+                    >
+                      <span class="material-symbols-outlined">star_rate</span>
+                    </button>
+                  </div>
+                  <div class="pl-16">
+                    <p
+                      class="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed"
+                    >
+                      The production and discharge of something, especially gas
+                      or radiation.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-700/50 text-slate-600 dark:text-slate-400 text-xs font-semibold tracking-wide uppercase"
+                        >noun</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="w-full py-3 text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center justify-center gap-2"
+              >
+                Load more words
+                <span class="material-symbols-outlined text-[18px]"
+                  >arrow_downward</span
+                >
+              </button>
+            </div>
+            <div class="flex flex-col gap-6">
+              <div
+                class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm"
+              >
+                <h2
+                  class="text-lg font-bold text-slate-900 dark:text-white mb-6"
+                >
+                  Topic Progress
+                </h2>
+                <div class="relative size-48 mx-auto">
+                  <svg
+                    class="size-full -rotate-90 transform"
+                    viewBox="0 0 100 100"
+                  >
+                    <circle
+                      class="text-slate-100 dark:text-slate-700"
+                      cx="50"
+                      cy="50"
+                      fill="transparent"
+                      r="40"
+                      stroke="currentColor"
+                      stroke-width="8"
+                    ></circle>
+                    <circle
+                      class="text-emerald-500"
+                      cx="50"
+                      cy="50"
+                      fill="transparent"
+                      r="40"
+                      stroke="currentColor"
+                      stroke-dasharray="84 251.2"
+                      stroke-linecap="round"
+                      stroke-width="8"
+                    ></circle>
+                    <circle
+                      class="text-amber-400"
+                      cx="50"
+                      cy="50"
+                      fill="transparent"
+                      r="40"
+                      stroke="currentColor"
+                      stroke-dasharray="56 251.2"
+                      stroke-dashoffset="-84"
+                      stroke-linecap="round"
+                      stroke-width="8"
+                    ></circle>
+                  </svg>
+                  <div
+                    class="absolute inset-0 flex flex-col items-center justify-center"
+                  >
+                    <span
+                      class="text-3xl font-display font-bold text-slate-900 dark:text-white"
+                      >55%</span
+                    >
+                    <span class="text-xs font-medium text-slate-500 uppercase"
+                      >Complete</span
+                    >
+                  </div>
+                </div>
+                <div class="mt-8 space-y-4">
+                  <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center gap-3">
+                      <div class="size-3 rounded-full bg-emerald-500"></div>
+                      <span class="text-slate-600 dark:text-slate-300"
+                        >Mastered</span
+                      >
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white"
+                      >15</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center gap-3">
+                      <div class="size-3 rounded-full bg-amber-400"></div>
+                      <span class="text-slate-600 dark:text-slate-300"
+                        >Learning</span
+                      >
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white"
+                      >10</span
+                    >
+                  </div>
+                  <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="size-3 rounded-full bg-slate-300 dark:bg-slate-600"
+                      ></div>
+                      <span class="text-slate-600 dark:text-slate-300"
+                        >New</span
+                      >
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white"
+                      >20</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-gradient-to-br from-blue-600 to-indigo-700 p-6 rounded-2xl shadow-lg shadow-blue-500/20 text-white relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 -mr-4 -mt-4 size-24 bg-white/10 rounded-full blur-2xl"
+                ></div>
+                <div
+                  class="flex justify-between items-start mb-4 relative z-10"
+                >
+                  <div>
+                    <h3 class="font-bold text-lg">Daily Goal</h3>
+                    <p class="text-blue-100 text-sm mt-1">
+                      Focus on "Environment" today!
+                    </p>
+                  </div>
+                  <div class="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-white"
+                      >emoji_events</span
+                    >
+                  </div>
+                </div>
+                <div class="relative z-10">
+                  <div
+                    class="flex justify-between text-xs font-medium text-blue-100 mb-2"
+                  >
+                    <span>5 learned</span>
+                    <span>Goal: 10</span>
+                  </div>
+                  <div class="w-full bg-black/20 rounded-full h-2">
+                    <div
+                      class="bg-white h-2 rounded-full transition-all duration-500"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="bg-indigo-50 dark:bg-slate-800/50 p-5 rounded-2xl border border-indigo-100 dark:border-slate-700"
+              >
+                <div class="flex gap-3">
+                  <span class="material-symbols-outlined text-indigo-500"
+                    >lightbulb</span
+                  >
+                  <div>
+                    <h4
+                      class="font-bold text-sm text-slate-900 dark:text-white mb-1"
+                    >
+                      Study Tip
+                    </h4>
+                    <p
+                      class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                      Try using words like 'biodiversity' and 'sustainable' in
+                      sentences to remember them better.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

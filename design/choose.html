@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bài kiểm tra trắc nghiệm - Serendipity</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2b6cee",
+              "background-light": "#f6f6f8",
+              "background-dark": "#111722",
+              "card-dark": "#192233",
+              "border-dark": "#232f48",
+              "text-secondary": "#92a4c9",
+            },
+            fontFamily: {
+              display: ["Lexend", "Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .filled-icon {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col"
+  >
+    <header
+      class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-border-dark px-4 sm:px-10 py-3 bg-background-dark/50 backdrop-blur-md sticky top-0 z-50"
+    >
+      <div class="flex items-center gap-4 text-white">
+        <a
+          class="text-text-secondary hover:text-white transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </a>
+        <h2
+          class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+        >
+          Bài kiểm tra trắc nghiệm
+        </h2>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          aria-label="Settings"
+          class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-border-dark text-white hover:bg-[#324467] transition-colors"
+        >
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+        <button
+          aria-label="Close"
+          class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-border-dark text-white hover:bg-[#324467] transition-colors"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+    </header>
+    <main
+      class="flex-1 flex flex-col items-center justify-start py-8 px-4 w-full max-w-[1200px] mx-auto gap-8"
+    >
+      <div class="w-full max-w-[640px] flex flex-col gap-4">
+        <div
+          class="flex flex-wrap gap-2 items-center justify-between text-sm sm:text-base"
+        >
+          <div class="flex items-center gap-2">
+            <a
+              class="text-text-secondary font-medium hover:text-primary transition-colors"
+              href="#"
+              >Gói IELTS Basic</a
+            >
+            <span class="text-text-secondary">/</span>
+            <span class="text-white font-medium">Topic: Environment</span>
+          </div>
+          <div class="flex items-center gap-1 text-text-secondary">
+            <span class="material-symbols-outlined text-[18px]">timer</span>
+            <span>04:25</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="flex gap-6 justify-between items-end">
+            <p class="text-white text-sm font-medium">Tiến độ làm bài</p>
+            <p class="text-text-secondary text-xs font-normal">Câu 5 / 20</p>
+          </div>
+          <div class="rounded-full bg-[#324467] h-2 w-full overflow-hidden">
+            <div
+              class="h-full rounded-full bg-primary transition-all duration-500 ease-out"
+              style="width: 25%"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full max-w-[640px] flex flex-col gap-6">
+        <div
+          class="w-full bg-card-dark rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.3)] border border-border-dark flex flex-col items-center justify-center p-8 md:p-12 gap-6 min-h-[240px]"
+        >
+          <div
+            class="size-16 mb-2 rounded-full bg-gradient-to-br from-[#2b6cee]/20 to-[#2b6cee]/5 flex items-center justify-center border border-[#2b6cee]/20"
+          >
+            <span class="material-symbols-outlined text-[#2b6cee] text-3xl"
+              >quiz</span
+            >
+          </div>
+          <div class="flex flex-col items-center gap-2 text-center">
+            <span class="text-text-secondary text-base italic font-normal"
+              >Chọn nghĩa đúng của từ:</span
+            >
+            <h1
+              class="text-4xl sm:text-5xl font-bold text-white tracking-tight"
+            >
+              Serendipity
+            </h1>
+            <p class="text-text-secondary text-lg font-light">
+              /ˌser.ənˈdɪp.ə.ti/
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-3">
+          <button
+            class="relative group w-full p-4 sm:p-5 rounded-xl bg-card-dark border-2 border-border-dark hover:border-primary/50 hover:bg-[#1e2a40] text-left transition-all duration-200 flex items-center justify-between"
+          >
+            <div class="flex items-center gap-4">
+              <span
+                class="flex items-center justify-center size-8 min-w-[32px] rounded-lg bg-[#232f48] text-text-secondary text-sm font-semibold group-hover:bg-primary group-hover:text-white transition-colors"
+                >A</span
+              >
+              <span class="text-white font-medium text-sm sm:text-base"
+                >Sự nỗ lực không ngừng nghỉ</span
+              >
+            </div>
+          </button>
+          <button
+            class="relative w-full p-4 sm:p-5 rounded-xl bg-green-500/10 border-2 border-green-500 text-left transition-all duration-200 flex items-center justify-between shadow-[0_0_15px_rgba(34,197,94,0.2)]"
+          >
+            <div class="flex items-center gap-4">
+              <span
+                class="flex items-center justify-center size-8 min-w-[32px] rounded-lg bg-green-500 text-white text-sm font-semibold"
+                >B</span
+              >
+              <span class="text-white font-medium text-sm sm:text-base"
+                >Sự tình cờ tìm thấy điều may mắn</span
+              >
+            </div>
+            <span class="material-symbols-outlined text-green-500"
+              >check_circle</span
+            >
+          </button>
+          <button
+            class="relative group w-full p-4 sm:p-5 rounded-xl bg-card-dark border-2 border-border-dark hover:border-primary/50 hover:bg-[#1e2a40] text-left transition-all duration-200 flex items-center justify-between"
+          >
+            <div class="flex items-center gap-4">
+              <span
+                class="flex items-center justify-center size-8 min-w-[32px] rounded-lg bg-[#232f48] text-text-secondary text-sm font-semibold group-hover:bg-primary group-hover:text-white transition-colors"
+                >C</span
+              >
+              <span class="text-white font-medium text-sm sm:text-base"
+                >Cảm giác bình yên trong tâm hồn</span
+              >
+            </div>
+          </button>
+          <button
+            class="relative group w-full p-4 sm:p-5 rounded-xl bg-card-dark border-2 border-border-dark hover:border-primary/50 hover:bg-[#1e2a40] text-left transition-all duration-200 flex items-center justify-between"
+          >
+            <div class="flex items-center gap-4">
+              <span
+                class="flex items-center justify-center size-8 min-w-[32px] rounded-lg bg-[#232f48] text-text-secondary text-sm font-semibold group-hover:bg-primary group-hover:text-white transition-colors"
+                >D</span
+              >
+              <span class="text-white font-medium text-sm sm:text-base"
+                >Một loại cây nhiệt đới</span
+              >
+            </div>
+          </button>
+        </div>
+        <div class="flex items-center justify-between w-full pt-4">
+          <button
+            class="flex items-center gap-2 px-5 py-2.5 rounded-lg text-text-secondary hover:text-white hover:bg-white/5 transition-colors"
+          >
+            <span class="material-symbols-outlined text-xl">arrow_back</span>
+            <span class="font-medium text-sm">Quay lại</span>
+          </button>
+          <button
+            class="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary hover:bg-blue-600 text-white shadow-lg shadow-primary/25 transition-all hover:translate-y-[-1px]"
+          >
+            <span class="font-medium text-sm">Câu tiếp theo</span>
+            <span class="material-symbols-outlined text-xl">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="flex flex-wrap justify-center gap-6 opacity-40 hover:opacity-100 transition-opacity duration-300 mt-4"
+      >
+        <div class="flex items-center gap-2">
+          <kbd
+            class="hidden sm:inline-flex items-center justify-center h-6 min-w-[24px] px-1.5 rounded bg-[#232f48] border border-[#324467] text-xs font-sans text-gray-300"
+            >1-4</kbd
+          >
+          <span class="text-xs text-gray-400">Chọn đáp án</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <kbd
+            class="hidden sm:inline-flex items-center justify-center h-6 min-w-[24px] px-1.5 rounded bg-[#232f48] border border-[#324467] text-xs font-sans text-gray-300"
+            >Enter</kbd
+          >
+          <span class="text-xs text-gray-400">Tiếp tục</span>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
