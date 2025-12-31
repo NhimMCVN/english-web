@@ -2,6 +2,15 @@ import Sidebar from '@/components/Sidebar'
 import Header from '@/components/Header'
 import Link from 'next/link'
 
+export function generateStaticParams() {
+  // Return all topic slugs that should be pre-rendered at build time
+  return [
+    { slug: 'environment' },
+    { slug: 'technology' },
+    { slug: 'education' },
+  ]
+}
+
 export default function TopicPage({ params }: { params: { slug: string } }) {
   const topicName = params.slug.charAt(0).toUpperCase() + params.slug.slice(1)
 
